@@ -1,10 +1,71 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('@Url.Content("Images/Cana-Watercolor.JPG")') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+    }
+
+    .content {
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay for better readability */
+        border-radius: 8px;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .header-banner {
+        text-align: center;
+        padding: 40px;
+    }
+
+        .header-banner h1 {
+            font-size: 3rem;
+        }
+
+    .menu-links {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+        .menu-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .menu-links a:hover {
+                background-color: #0056b3;
+            }
+</style>
+
+<div class="text-black">
+    <h1>Welcome to the House of Cana</h1>
+    <p></p>
+</div>
+
+<div class="content">
+    <h2>About Us</h2>
+    <p>We are a Catholic hospitality house dedicated to providing a welcoming environment for all. Join us for dinners, events, and community-building activities.</p>
+
+    <h2>What We Offer</h2> @* need to actually beef up this definition*@
+    <ul>
+        <li>Dinners open to everyone</li>
+        <li>Special events and volunteering opportunities</li>
+        <li>Clubs like the Benedictine Club for deeper engagement</li>
+        <li>Opportunities to support our mission through donations.</li>
+    </ul>
+
 </div>

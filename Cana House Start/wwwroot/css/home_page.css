@@ -1,0 +1,67 @@
+﻿body {
+    background: url('ATCHISON_RED_DEER_OFFICIAL_LOGO.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+#main_header {
+    text-align: center;
+    color: #d10000; /* Bright red for emphasis */
+    text-shadow: 2px 2px 4px #999; /* Grey shadow for depth */
+    font-size: 48px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #000; /* Black color for contrast */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #d10000; /* Red color for links */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: #a70000; /* Darker red on hover */
+    }
+
+#p1 {
+    text-align: center;
+    padding: 25px;
+    background-color: #f5f5f5; /* Light grey background */
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Black shadow for a bold effect */
+    margin: 30px auto;
+    width: 75%;
+}
+
+#p2 {
+    text-align: center;
+    padding: 25px;
+    background-color: #f5f5f5; /* Light grey background */
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Black shadow for a bold effect */
+    margin: 30px auto;
+    width: 75%;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #000; /* Black footer */
+    color: #fff; /* White text for footer */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

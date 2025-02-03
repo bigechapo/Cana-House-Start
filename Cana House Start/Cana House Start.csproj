@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\Images\placeholderimage.jpg" />
+    <Content Remove="wwwroot\Images\Screenshot_30-1-2025_19354_discord.com.jpeg" />
   </ItemGroup>
 
 </Project>

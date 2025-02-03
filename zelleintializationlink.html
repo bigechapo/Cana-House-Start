@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelle Donation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:disabled {
+                background-color: #cccccc;
+            }
+    </style>
+</head>
+<body>
+
+    <h3>We Accept Zelle Donations</h3>
+    <p>To donate via Zelle, please send your donation to the following email address or phone number:</p>
+
+    <div>
+        <h4>Donation Information:</h4>
+        <p><strong>Email or Phone: your_zelle_email_or_phone@example.com</strong></p>
+        <p>Ensure that you are sending the donation in US Dollars (USD) and that you include a note with your donation if you'd like to be recognized.</p>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button id="copy-button" onclick="copyToClipboard()">Copy Zelle Info</button>
+    </div>
+
+    <p id="confirmation-message" style="color: green; display: none;">Zelle donation info copied to clipboard!</p>
+
+    <script>
+    function copyToClipboard() {
+      const zelleInfo = "your_zelle_email_or_phone@example.com";
+
+      // Create a temporary input element to copy the text
+      const tempInput = document.createElement('input');
+      tempInput.value = zelleInfo;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      // Show a confirmation message
+      const confirmationMessage = document.getElementById('confirmation-message');
+      confirmationMessage.style.display = 'block';
+      setTimeout(() => {
+        confirmationMessage.style.display = 'none';
+      }, 3000); // Hide message after 3 seconds
+    }
+    </script>
+
+</body>
+</html>

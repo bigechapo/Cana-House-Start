@@ -7,155 +7,175 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
-    <style>
-        body {
-            background-color: #6c85a3;
-            color: #2C2C2C;
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+    body {
+        background-color: #6c85a3;
+        color: #2C2C2C;
+        font-family: 'Playfair Display', serif;
+        margin: 0;
+        padding: 0;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            background-color: #F5F1E3;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        background-color: #F5F1E3;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: #800020;
-            text-align: center;
-        }
+    h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+        color: #800020;
+        text-align: center;
+    }
 
-        .event-box {
-            display: flex;
-            color: #800020;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
+    .event-box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
 
-        .event-card {
-            color: #800020;
-            flex: 1;
-            margin: 10px;
-            padding: 20px;
-            border: 2px solid #283F3B;
-            border-radius: 8px;
-            background-color: #FAFAFA;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .event-card {
+        flex: 1;
+        margin: 10px;
+        padding: 20px;
+        border: 2px solid #283F3B;
+        border-radius: 8px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
         .event-card:hover {
-            background-color: #d4a5a5;
-            color: #800020;
+            transform: scale(1.05);
         }
 
-        .event-card a {
-            text-decoration: none;
-            color: #800020;
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
+    .music-event {
+        background-image: url('/images/MusicImage.jpg');
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #283F3B;
-            color: white;
-        }
+    .mass-event {
+        background-image: url('/images/Mass.jpg');
+    }
 
-        th, td {
-            padding: 12px;
-            border: 1px solid white;
-            text-align: center;
-        }
+    .event-card h3, .event-card p {
+        background: rgba(245, 241, 227, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        color: #800020;
+    }
 
-        th {
-            background-color: #A67B5B;
-            font-weight: bold;
-        }
+    .event-card a {
+        text-decoration: none;
+        color: #800020;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 
-        a {
-            color: #F5F1E3;
-            text-decoration: underline;
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #283F3B;
+        color: white;
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid white;
+        text-align: center;
+    }
+
+    th {
+        background-color: #A67B5B;
+        font-weight: bold;
+    }
+
+    a {
+        color: #F5F1E3;
+        text-decoration: underline;
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+    }
 
         a:hover {
             text-decoration: underline;
         }
-    </style>
+</style>
 
-    <div class="container">
-        <h1>Upcoming Events</h1>
-        <h2>Featured Events</h2>
-        <div class="event-box">
-            <a href="#" class="event-card">
-                <h3>Music Night</h3>
-                <p>Experience an evening of live music and community.</p>
-            </a>
-            <a href="#" class="event-card">
-                <h3>Mass Gathering</h3>
-                <p>Join us for a spiritual evening of togetherness.</p>
-            </a>
-        </div>
-        <h3>Event Calendar</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Event</th>
-                    <th>Location</th>
-                    <th>Time</th>
-                    <th>Sign Up</th>
-                    <th>Volunteer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>01/01/2025</td>
-                    <td>New Year's Party</td>
-                    <td>Main Hall</td>
-                    <td>1:00-4:30 PM</td>
-                    <td><a href="#">Sign Up</a></td>
-                    <td><a href="#">Volunteer</a></td>
-                </tr>
-                <tr>
-                    <td>02/1/2025</td>
-                    <td>Fundraiser</td>
-                    <td>Basement</td>
-                    <td>2:00-6:30 PM</td>
-                    <td><a href="#">Sign Up</a></td>
-                    <td><a href="#">Volunteer</a></td>
-                </tr>
-            <tr>
-                <td>02/14/2025</td>
-                <td>Valentines Bash</td>
-                <td>Soccer Field</td>
-                <td>12:00-6:30 PM</td>
-                <td><a href="#">Sign Up</a></td>
-                <td><a href="#">Volunteer</a></td>
-            </tr>
-            <tr>
-                <td>07/4/2025</td>
-                <td>Fourth Of July Party</td>
-                <td>Main Hall</td>
-                <td>7:00-10:30 PM</td>
-                <td><a href="#">Sign Up</a></td>
-                <td><a href="#">Volunteer</a></td>
-            </tr>
-            </tbody>
-        </table>
+<div class="container">
+    <h1>Upcoming Events</h1>
+    <h2>Featured Events</h2>
+    <div class="event-box">
+        <a href="#" class="event-card music-event">
+            <h3>Music</h3>
+            <p>Experience an evening of live music and community.</p>
+        </a>
+        <a href="#" class="event-card mass-event">
+            <h3>Mass</h3>
+            <p>Join us for a spiritual evening of togetherness.</p>
+        </a>
+    </div>
+</div>
+<h3>Event Calendar</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Location</th>
+            <th>Time</th>
+            <th>Sign Up</th>
+            <th>Volunteer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>01/01/2025</td>
+            <td>New Year's Party</td>
+            <td>Main Hall</td>
+            <td>1:00-4:30 PM</td>
+            <td><a href="#">Sign Up</a></td>
+            <td><a href="#">Volunteer</a></td>
+        </tr>
+        <tr>
+            <td>02/1/2025</td>
+            <td>Fundraiser</td>
+            <td>Basement</td>
+            <td>2:00-6:30 PM</td>
+            <td><a href="#">Sign Up</a></td>
+            <td><a href="#">Volunteer</a></td>
+        </tr>
+        <tr>
+            <td>02/14/2025</td>
+            <td>Valentines Bash</td>
+            <td>Soccer Field</td>
+            <td>12:00-6:30 PM</td>
+            <td><a href="#">Sign Up</a></td>
+            <td><a href="#">Volunteer</a></td>
+        </tr>
+        <tr>
+            <td>07/4/2025</td>
+            <td>Fourth Of July Party</td>
+            <td>Main Hall</td>
+            <td>7:00-10:30 PM</td>
+            <td><a href="#">Sign Up</a></td>
+            <td><a href="#">Volunteer</a></td>
+        </tr>
+    </tbody>
+</table>
     </div>
 
 

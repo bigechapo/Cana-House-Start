@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaid Link Integration</title>
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+    <style>
+        button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:disabled {
+                background-color: #cccccc;
+            }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <h3>We accept these forms of donations</h3>
+        <button id="link-button" disabled>Link account</button>
+    </div>
+
+    <script>let linkToken = null;
+
+    // Function to create and obtain a link token from your server
+    const generateLinkToken = async () => {
+      try {
+        const response = await fetch('/api/create_link_token', {
+          method: 'POST',
+        });
+        const data = await response.json();
+        linkToken = data.link_token;
+        document.getElementById('link-button').disabled = false; // Enable the button
+      } catch (error) {
+        console.error('Error generating link token:', error);
+      }
+    };
+
+    // Initialize Plaid Link after link token is generated
+    const onSuccess = (public_token, metadata) => {
+      // Send the public_token to your server for exchange
+      fetch('/api/set_access_token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ public_token }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Access token set:', data);
+      })
+      .catch(error => console.error('Error sending public_token:', error));
+    };
+
+    const onLoad = () => {
+      if (linkToken) {
+        const handler = Plaid.create({
+          token: linkToken,
+          onSuccess: onSuccess,
+        });
+
+        // Enable the button once the token is ready
+        document.getElementById('link-button').onclick = () => {
+          handler.open();
+        };
+      }
+    };
+
+    // Generate the link token on page load
+    window.onload = async () => {
+      await generateLinkToken();
+      onLoad();
+    };</script>
+</body>
+</html>

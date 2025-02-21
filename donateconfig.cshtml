@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Donation</title>
+    <script src="https://www.paypal.com/sdk/js?client-id=your-paypal-client-id&currency=USD"></script> //create a paypal developer account and get a client id and a merchant id
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Secure Donation</h2>
+        <div id="donation-options">
+            <div id="paypal-button-container"></div>
+            <div id="venmo-button"></div>
+            <div id="cashapp-button"></div>
+            <div id="zelle-button"></div>
+        </div>
+        <div id="success-message" class="hidden">Thank you for your donation!</div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const method = urlParams.get("method");
+
+        if (method === "paypal") {
+            paypal.Buttons({
+                createOrder: (data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [{ amount: { value: "00.00" } }]
+                    });
+                },
+                onApprove: (data, actions) => {
+                    return actions.order.capture().then(details => {
+                        document.getElementById("success-message").classList.remove("hidden");
+                    });
+                }
+            }).render("#paypal-button-container");
+        } else if (method === "venmo") {
+            document.getElementById("venmo-button").innerHTML = '<a href="https://venmo.com/?txn=pay&recipients=your-venmo-username&amount=10&note=Donation" target="_blank">Venmo</a>'; //venmo username
+        } else if (method === "cashapp") {
+            document.getElementById("cashapp-button").innerHTML = '<a href="https://cash.app/$yourcashappusername" target="_blank">Cash App</a>'; //cashapp username
+        } else if (method === "zelle") {
+            document.getElementById("zelle-button").innerHTML = '<p>Zelle: Send to <strong>yourzelleemail@example.com</strong></p>';//zelle email or phone number
+        }
+    </script>
+</body>
+</html>

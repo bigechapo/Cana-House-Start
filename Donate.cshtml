@@ -1,0 +1,69 @@
+﻿@page
+@model Cana_House_Start.Pages.DonateModel
+@{
+    ViewData["Title"] = "Donation Page";
+}
+
+@* need to add photos etc *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Donation Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Donate Here!</h1>
+        <p>We accept these forms of donations</p>
+        <form id="donation-selection-form" action="donateconfig.cshtml" method="get">
+            <input type="hidden" id="selected-method" name="method" value="">
+            <button type="button" onclick="selectMethod('paypal')">Paypal</button>
+            <button type="button" onclick="selectMethod('zelle')">Zelle</button>
+            <button type="button" onclick="selectMethod('venmo')">Venmo</button>
+            <button type="button" onclick="selectMethod('cashapp')">Cash App</button>
+        </form>
+    </div>
+    <script>function selectMethod(method) {
+            document.getElementById("selected-method").value = method;
+            document.getElementById("donation-selection-form").submit();
+        }</script>
+</body>
+</html>

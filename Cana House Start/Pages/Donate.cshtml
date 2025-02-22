@@ -1,27 +1,124 @@
 ﻿@page
 @model Cana_House_Start.Pages.DonateModel
 @{
-    ViewData["Title"] = "Donate Page";
+    ViewData["Title"] = "Donate";
 }
 
-@* need to add photos etc & to link *@
-<div class="text-black" style="text-align: center;">
-    <h1 style="text-decoration: underline;">Donate Here</h1>
-    <p></p>
-    <p></p>
-</div>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #6c85a3;
+            color: #2C2C2C;
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+        }
 
-<p></p>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-<div class="text-black" style="text-align: center;">
-    <h3>We accept</h3>
-    <table style="width: 80%; margin: auto; border-collapse: collapse; font-size: 18px; border: 1px solid black;">
-        <thead>
-            <tr style="background-color: #f2f2f2;">
-                <th style="padding: 10px; border: 1px solid black;">Donate</th>
-                <th style="padding: 10px; border: 1px solid black;">Credit Card</th>
-                <th style="padding: 10px; border: 1px solid black;">Paypal</th>
-                <th style="padding: 10px; border: 1px solid black;">Venmo</th>
-            </tr>
-    </table>
-</div>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #800020;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .donate-section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #283F3B;
+        }
+
+        .donate-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px;
+            text-align: center;
+            background-color: #A67B5B;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .donate-button:hover {
+                background-color: #8B5A2B;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #283F3B;
+            text-align: center;
+        }
+
+        th {
+            background-color: #283F3B;
+            color: white;
+            font-weight: 400;
+        }
+
+        a {
+            color: #800020;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+            a:hover {
+                text-decoration: none;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Support Our Mission</h1>
+        <p>Your gifts are greatly appreciated. Whether you choose to sign up for recurring donations or just give once, know that your generosity makes a serious impact. No gift is too small</p>
+        <div class="donate-section">
+            <div class="info-section" style="display: flex; align-items: center;">
+                <div style="flex: 1; margin-right: 10px;">
+                    <img src="~/images/house.jpg" style="max-width: 500px; height: auto;">
+                </div>
+                <div style="flex: 2;">
+                    <h2>Ways to Donate</h2>
+                    <form>
+                        <label for="recurring">
+                            <input type="checkbox" id="recurring" name="recurring" value="donation">
+                            Make this a monthly recurring gift
+                        </label>
+                    </form>
+                    <button class="donate-button">Credit Card</button>
+                    <button class="donate-button">PayPal</button>
+                    <button class="donate-button">Venmo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

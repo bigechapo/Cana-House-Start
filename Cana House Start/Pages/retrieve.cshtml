@@ -1,0 +1,30 @@
+﻿public IActionResult Index()
+{
+    List<Upload>
+    uploads = new List<Upload>
+        ();
+
+        using (SqlConnection conn = new SqlConnection("Sql SqlConnection but idk how to Description that"))
+        {
+        string query = "SELECT ID, Picture, Description, UploadDateTime, SignUp FROM Uploads";
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+        conn.Open();
+        using (SqlDataReader reader = cmd.ExecuteReader())
+        {
+        while (reader.Read())
+        {
+        uploads.Add(new Upload
+        {
+        ID = reader.GetInt32(0),
+        Picture = (byte[])reader["Picture"],
+        Description = reader.GetString(2),
+        UploadDateTime = reader.GetDateTime(3),
+        SignUp = reader.IsDBNull(4) ? string.Empty : reader.GetString(4)
+        });
+        }
+        }
+        }
+        }
+        return View(uploads);
+        }

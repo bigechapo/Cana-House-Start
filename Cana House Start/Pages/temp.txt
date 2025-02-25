@@ -1,0 +1,7 @@
+﻿CREATE TABLE Uploads (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    PicturePath NVARCHAR(255),
+    Description NVARCHAR(250),
+    UploadDateTime DATETIME DEFAULT GETDATE(),
+    SignUp NVARCHAR(250)
+);

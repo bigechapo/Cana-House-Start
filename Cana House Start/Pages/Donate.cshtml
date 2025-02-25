@@ -1,33 +1,26 @@
-@@ -1,124 +1,69 @@
 @page
-@model Cana_House_Start.Pages.Donate
+@model Cana_House_Start.Pages.DonateModel
 @{
-    ViewData["Title"] = "Donation Page";
+    ViewData["Title"] = "Donate";
 }
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Donation Method</title>
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #6c85a3;
             color: #2C2C2C;
             font-family: 'Playfair Display', serif;
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 0;
         }
 
         .container {
             width: 90%;
-            max-width: 500px;
+            max-width: 1200px;
             margin: auto;
             padding: 20px;
-            background-color: white;
+            background-color: #F5F1E3;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -53,14 +46,13 @@
             border-left: 5px solid #283F3B;
         }
 
-        .donate-section h1 {
-            text-decoration: underline;
-        }
-
-        button {
-            width: 100%;
+        .donate-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
             padding: 15px;
-            background-color: #4CAF50;
+            text-align: center;
+            background-color: #A67B5B;
             color: white;
             font-size: 18px;
             font-weight: bold;
@@ -68,12 +60,11 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 10px 0;
         }
 
-        button:hover {
-            background-color: #45a049;
-        }
+            .donate-button:hover {
+                background-color: #8B5A2B;
+            }
 
         table {
             width: 100%;
@@ -99,29 +90,44 @@
             text-decoration: underline;
         }
 
-        a:hover {
-            text-decoration: none;
-        }
+            a:hover {
+                text-decoration: none;
+            }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Support Our Mission</h1>
-        <p>Your gifts are greatly appreciated. Whether you choose to sign up for recurring donations or just give once, know that your generosity makes a serious impact. No gift is too small.</p>
-        <h2>We accept these forms of donations</h2>
-        <form id="donation-selection-form" action="donateconfig.cshtml" method="get">
-            <input type="hidden" id="selected-method" name="method" value="">
-            <button type="button" onclick="selectMethod('paypal')">Paypal</button>
-            <button type="button" onclick="selectMethod('zelle')">Zelle</button>
-            <button type="button" onclick="selectMethod('venmo')">Venmo</button>
-            <button type="button" onclick="selectMethod('cashapp')">Cash App</button>
-        </form>
+        <p>Your gifts are greatly appreciated. Whether you choose to sign up for recurring donations or just give once, know that your generosity makes a serious impact. No gift is too small</p>
+        <div class="donate-section">
+            <div class="info-section" style="display: flex; align-items: center;">
+                <div style="flex: 1; margin-right: 10px;">
+                    <img src="~/images/house.jpg" style="max-width: 500px; height: auto;">
+                </div>
+                <div style="flex: 2;">
+                    <h2>Ways to Donate</h2>
+                    <form>
+                        <label for="recurring">
+                            <input type="checkbox" id="recurring" name="recurring" value="donation">
+                            Make this a monthly recurring gift
+                        </label>
+                    </form>
+                    <form id="donation-selection-form" action="donateconfig.cshtml" method="get">
+                        <input type="hidden" id="selected-method" name="method" value="">
+                        <button type="button" class="donate-button" onclick="selectMethod('paypal')">Paypal</button>
+                        <button type="button" class="donate-button" onclick="selectMethod('zelle')">Zelle</button>
+                        <button type="button" class="donate-button" onclick="selectMethod('venmo')">Venmo</button>
+                        <button type="button" class="donate-button" onclick="selectMethod('cashapp')">Cash App</button>
+                    </form>
+                </div>
+                <script>
+                    function selectMethod(method) {
+                        document.getElementById("selected-method").value = method;
+                        document.getElementById("donation-selection-form").submit();
+                    }</script>
+            </div>
+        </div>
     </div>
-    <script>
-        function selectMethod(method) {
-            document.getElementById("selected-method").value = method;
-            document.getElementById("donation-selection-form").submit();
-        }
-    </script>
 </body>
-</html>
+

@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using CanaHouse.Data;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Cana_House_Start.Pages
 {
@@ -16,6 +16,7 @@ namespace Cana_House_Start.Pages
 
         public void OnGet()
         {
+            /* Uncomment to test DB connectivity
             try
             {
                 // Check if the Users table has any data
@@ -26,6 +27,7 @@ namespace Cana_House_Start.Pages
             {
                 Message = $"Database Connection Failed: {ex.Message}";
             }
+            */
         }
     }
 }

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Donation Method</title>
+    <style>
+        body {
+            background-color: #6c85a3;
+            color: #2C2C2C;
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #800020;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .donate-section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #283F3B;
+            h1
+
+        {
+            text-decoration: underline;
+        }
+
+        .donate-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            button
+
+        {
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            background-color: #A67B5B;
+            color: white;
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .donate-button:hover {
+            background-color: #8B5A2B;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #283F3B;
+            text-align: center;
+        }
+
+        th {
+            background-color: #283F3B;
+            color: white;
+            font-weight: 400;
+        }
+
+        a {
+            color: #800020;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+            a:hover {
+                text-decoration: none;
+                button: hover
+
+        {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Secure Donation</h2>
+        <div id="donation-options">
+            <div id="paypal-button"></div>
+            <div id="venmo-button"></div>
+            <div id="cashapp-button"></div>
+            <div id="zelle-button"></div>
+        </div>
+        <div id="success-message" class="hidden">Thank you for your donation!</div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const method = urlParams.get("method");
+
+        if (method === "paypal") {
+            document.getElementById("paypal-button").innerHTML = '<a href="https://www.paypal.com/donate/?hosted_button_id=MZ2VZ2YJ8JA7W" target="_blank">Paypal</a>'
+        } else if (method === "venmo") {
+            document.getElementById("venmo-button").innerHTML = '<a href="https://venmo.com/?txn=pay&recipients=your-venmo-username&amount=10&note=Donation" target="_blank">Venmo</a>'; //venmo username
+        } else if (method === "cashapp") {
+            document.getElementById("cashapp-button").innerHTML = '<a href="https://cash.app/$yourcashappusername" target="_blank">Cash App</a>'; //cashapp username
+        } else if (method === "zelle") {
+            document.getElementById("zelle-button").innerHTML = '<p>Zelle: Send to <strong>yourzelleemail@example.com</strong> by following this link to: https://www.zellepay.com/, or through your banking app and inputing the email that is provided.</p>"';//zelle email or phone number
+        }
+    </script>
+</body>
+</html>

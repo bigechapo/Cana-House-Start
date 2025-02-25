@@ -1,0 +1,193 @@
+<<<<<<< Updated upstream
+@@ -1,124 +1,69 @@
+@page
+@model Cana_House_Start.Pages.Donate
+@{
+    ViewData["Title"] = "Donation Page";
+}
+
+=======
+﻿@@ -1,124 +1,69 @@
+@page
+@model Cana_House_Start.Pages.Donate
+@{
+    ViewData["Title"] = "Donate";
+    ViewData["Title"] = "Donation Page";
+}
+
+@* need to add photos etc *@
+>>>>>>> Stashed changes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Donation Method</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #2C2C2C;
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+<<<<<<< Updated upstream
+            padding: 20px;
+            text-align: center;
+=======
+            padding: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+>>>>>>> Stashed changes
+        }
+
+        .container {
+            width: 90%;
+<<<<<<< Updated upstream
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+=======
+            max-width: 1200px;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            background: white;
+>>>>>>> Stashed changes
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #800020;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .donate-section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #283F3B;
+        h1 {
+            text-decoration: underline;
+        }
+        }
+
+<<<<<<< Updated upstream
+        .donate-section h1 {
+            text-decoration: underline;
+        }
+
+=======
+        .donate-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+>>>>>>> Stashed changes
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #283F3B;
+            text-align: center;
+        }
+
+        th {
+            background-color: #283F3B;
+            color: white;
+            font-weight: 400;
+        }
+
+        a {
+            color: #800020;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+<<<<<<< Updated upstream
+        a:hover {
+            text-decoration: none;
+=======
+            a:hover {
+                text-decoration: none;
+            button:hover {
+                background-color: #45a049;
+            }
+            }
+>>>>>>> Stashed changes
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Donate Here!</h1>
+        <h1>Support Our Mission</h1>
+<<<<<<< Updated upstream
+        <p>Your gifts are greatly appreciated. Whether you choose to sign up for recurring donations or just give once, know that your generosity makes a serious impact. No gift is too small.</p>
+=======
+        <p>Your gifts are greatly appreciated. Whether you choose to sign up for recurring donations or just give once, know that your generosity makes a serious impact. No gift is too small</p>
+>>>>>>> Stashed changes
+        <h2>We accept these forms of donations</h2>
+        <form id="donation-selection-form" action="donateconfig.cshtml" method="get">
+            <input type="hidden" id="selected-method" name="method" value="">
+            <button type="button" onclick="selectMethod('paypal')">Paypal</button>
+            <button type="button" onclick="selectMethod('zelle')">Zelle</button>
+            <button type="button" onclick="selectMethod('venmo')">Venmo</button>
+            <button type="button" onclick="selectMethod('cashapp')">Cash App</button>
+        </form>
+    </div>
+<<<<<<< Updated upstream
+    <script>
+        function selectMethod(method) {
+            document.getElementById("selected-method").value = method;
+            document.getElementById("donation-selection-form").submit();
+        }
+    </script>
+=======
+    <script>function selectMethod(method) {
+            document.getElementById("selected-method").value = method;
+            document.getElementById("donation-selection-form").submit();
+        }
+        </script>
+>>>>>>> Stashed changes
+</body>
+</html>

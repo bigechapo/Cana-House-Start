@@ -113,21 +113,28 @@
                             Make this a monthly recurring gift
                         </label>
                     </form>
-                    <form id="donation-selection-form" action="donateconfig.cshtml" method="get">
-                        <input type="hidden" id="selected-method" name="method" value="">
-                        <button type="button" class="donate-button" onclick="selectMethod('paypal')">Paypal</button>
-                        <button type="button" class="donate-button" onclick="selectMethod('zelle')">Zelle</button>
-                        <button type="button" class="donate-button" onclick="selectMethod('venmo')">Venmo</button>
-                        <button type="button" class="donate-button" onclick="selectMethod('cashapp')">Cash App</button>
-                    </form>
+                    <button type="button" class="donate-button" onclick="selectMethod('paypal')">Paypal</button>
+                    <button type="button" class="donate-button" onclick="selectMethod('venmo')">Venmo</button>
+                    <button type="button" class="donate-button" onclick="selectMethod('cashapp')">Cash App</button>
                 </div>
-                <script>
-                    function selectMethod(method) {
-                        document.getElementById("selected-method").value = method;
-                        document.getElementById("donation-selection-form").submit();
-                    }</script>
             </div>
         </div>
     </div>
+
+    <script>
+        function selectMethod(method) {
+            const links = {
+                paypal: "https://www.paypal.com/donate/?hosted_button_id=MZ2VZ2YJ8JA7W",
+                venmo: "https://venmo.com/?txn=pay&recipients=your-venmo-username&amount=10&note=Donation",
+                cashapp: "https://cash.app/$yourcashappusername"
+            };
+
+            if (links[method]) {
+                window.location.href = links[method];
+            } else {
+                alert("Invalid donation method selected.");
+            }
+        }
+    </script>
 </body>
 

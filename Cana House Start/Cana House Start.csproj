@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\EngagingEvents.cs" />
+    <Compile Remove="Pages\FoodMusicFriendship.cs" />
+    <Compile Remove="Pages\Gallery.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\Images\New folder\house.jpg" />
     <Content Remove="wwwroot\Images\placeholderimage.jpg" />
     <Content Remove="wwwroot\Images\Screenshot_30-1-2025_19354_discord.com.jpeg" />

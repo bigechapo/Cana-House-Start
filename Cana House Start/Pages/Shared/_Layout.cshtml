@@ -5,40 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cana_House_Start</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Cana_House_Start.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/Cana_House_Start.styles.css" />
+    <style>
+        /* .navbar .container { */
+        /*     display: flex; */
+        /*     align-items: center; */
+        /*     justify-content: start; */
+        /* } */
+
+        .navbar-brand {
+            font-weight: bold;
+            padding-right: 10px; 
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar-nav .nav-item a[href*="/Donate"] {
+                background-color: #800020;
+                color: white !important;
+                padding: 8px 12px;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item .dropdown-toggle::after {
+                display: none !important;
+            }
+
+            .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            background-color: #F5F1E3;
+        }
+
+        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+
+
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Cana House of Hospitality</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-2">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Reserve">Reserve House</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Events">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Donate">Donation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Info">Additional Information</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy"></a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="navbar-brand" asp-area="" asp-page="/Index">Cana House of Hospitality</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="EventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="EventsDropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Calendar">Events Calendar</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/CommunityLunch">Community Lunch</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/EventA">Event A</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/EventB">Event B</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="VolunteerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Volunteer Opportunities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="VolunteerDropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-page="/WorkDays">Work Days</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/FoodSignUp">Food Sign Up For Community Lunch</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/WishList">Wish List</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="OurWorkDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Work
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="OurWorkDropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Mission">Mission Goal</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Offers">What We Offer</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/EngagingEvents">Engaging Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-page="/ImportantInfo">Meeting Information</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/TeamMembers">Team Members</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Dinners">Community Dinners</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/FoodMusicFriendship">Food-Music-Friendship</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Galery">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/SignIn">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Donate">Give</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -48,15 +129,9 @@
         </main>
     </div>
 
-    @*<footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Cana House of Hospitality - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
-    *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

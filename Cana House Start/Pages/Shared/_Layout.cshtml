@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/Cana_House_Start.styles.css" />
     <style>
-        /* .navbar .container { */
-        /*     display: flex; */
-        /*     align-items: center; */
-        /*     justify-content: start; */
-        /* } */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
         .navbar-brand {
             font-weight: bold;
@@ -111,7 +116,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

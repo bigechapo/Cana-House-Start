@@ -15,122 +15,126 @@
 
     <style>
         body {
-            background-color: #6c85a3;
+            background: url('/Images/Cana-Watercolor.JPG') no-repeat center center fixed;
+            background-size: cover;
             color: #2C2C2C;
             font-family: 'Playfair Display', serif;
             margin: 0;
             padding: 0;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            background-color: #F5F1E3;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .hero-header {
             text-align: center;
-        }
-
-        .content {
-            padding: 20px;
-            background: #FAFAFA;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            border-radius: 8px;
-            border: 2px solid #283F3B;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        h1, h2 {
-            font-family: 'Playfair Display', serif;
-            color: #800020;
-            text-align: center;
-        }
-
-        p {
-            font-size: 18px;
-            color: #2C2C2C;
-        }
-
-        .content-img {
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-            .content-img:hover {
-                transform: scale(1.1);
-            }
-
-        .description {
-            margin-top: 15px;
-            font-size: 18px;
+            font-size: 3rem; 
             font-weight: bold;
-            color: #333;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-        a {
-            text-decoration: none;
-            color: #800020;
-            font-weight: bold;
-        }
+        /* .container {  */
+        /*     width: 90%;  */
+        /*     max-width: 1200px; */
+        /*     margin: auto; */
+        /*     padding: 20px; */
+        /*     background-color: #F5F1E3; */
+        /*     border-radius: 10px; */
+        /*     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+        /*     text-align: center; */
+        /*  } */
 
-            a:hover {
-                text-decoration: underline;
-            }
+        /* .content {
+        /*     padding: 20px; */
+        /*     background: #FAFAFA; */
+        /*     min-height: 300px; */
+        /*     display: flex; */
+        /*     flex-direction: column; */
+        /*     justify-content: center; */
+        /*     align-items: center; */
+        /*     width: 90%; */
+        /*     max-width: 800px; */
+        /*     margin: 20px auto; */
+        /*     border-radius: 8px; */
+        /*     border: 2px solid #283F3B; */
+        /*     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+        /* } */
+
+        /* h1, h2 { */
+        /*     font-family: 'Playfair Display', serif; */
+        /*     color: #800020; */
+        /*     text-align: center; */
+        /* } */
+
+        /* p { */
+        /*     font-size: 18px; */
+        /*     color: #2C2C2C; */
+        /* } */
+
+        /* .content-img { */
+        /*     width: 80%; */
+        /*     max-width: 600px; */
+        /*     border-radius: 10px; */
+        /*     transition: transform 0.3s ease-in-out; */
+        /* } */
+
+        /*     .content-img:hover { */
+        /*         transform: scale(1.1); */
+        /*     } */
+
+        /* .description { */
+        /*     margin-top: 15px; */
+        /*     font-size: 18px; */
+        /*     font-weight: bold; */
+        /*     color: #333; */
+        /* } */
+
+        /* a { */
+        /*     text-decoration: none; */
+        /*     color: #800020; */
+        /*     font-weight: bold; */
+        /* } */
+
+        /*     a:hover { */
+        /*         text-decoration: underline; */
+        /*     } */
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Welcome to the House of Cana</h1>
+    <h1 class="hero-header">Welcome to the Cana House of Hospitality</h1>
 
-        <div class="content">
-            <a href="/Index">
-                <img src="/Images/Cana-Watercolor.JPG" class="img-fluid content-img" alt="Section 1">
-            </a>
-            <p class="description">We are a Catholic hospitality house dedicated to providing a welcoming environment for all.</p>
-        </div>
+        @* <div class="content"> *@
+        @*     <a href="/Index"> *@
+        @*         <img src="/Images/Cana-Watercolor.JPG" class="img-fluid content-img" alt="Section 1"> *@
+        @*     </a> *@
+        @*     <p class="description">We are a Catholic hospitality house dedicated to providing a welcoming environment for all.</p> *@
+        @* </div> *@
 
-        <div class="content">
-            <h2>Reserve the House</h2>
-            <a href="/Reserve">
-                <img src="/Images/ReserveHouse.jpg" class="img-fluid content-img" alt="Section 2">
-            </a>
-            <p class="description">Reserve the House for all your needs.</p>
-        </div>
+        @* <div class="content"> *@
+        @*     <h2>Upcoming Events</h2> *@
+        @*     <a href="/Events"> *@
+        @*         <img src="/Images/Events.jpg" class="img-fluid content-img" alt="Section 3"> *@
+        @*     </a> *@
+        @*     <p class="description">Check out our upcoming events.</p> *@
+        @* </div> *@
 
-        <div class="content">
-            <h2>Upcoming Events</h2>
-            <a href="/Events">
-                <img src="/Images/Events.jpg" class="img-fluid content-img" alt="Section 3">
-            </a>
-            <p class="description">Check out our upcoming events.</p>
-        </div>
+        @* <div class="content"> *@
+        @*     <h2>Donations</h2> *@
+        @*     <a href="/Donate"> *@
+        @*         <img src="/Images/Donation.jpg" class="img-fluid content-img" alt="Section 4"> *@
+        @*     </a> *@
+        @*     <p class="description">We appreciate all of your generosity.</p> *@
+        @* </div> *@
 
-        <div class="content">
-            <h2>Donations</h2>
-            <a href="/Donate">
-                <img src="/Images/Donation.jpg" class="img-fluid content-img" alt="Section 4">
-            </a>
-            <p class="description">We appreciate all of your generosity.</p>
-        </div>
-
-        <div class="content">
-            <h2>More About the House</h2>
-            <a href="/Info">
-                <img src="/Images/AddInfo.jpg" class="img-fluid content-img" alt="Section 5">
-            </a>
-            <p class="description">Learn more about our mission and the people behind the house.</p>
-        </div>
-    </div>
+        @* <div class="content"> *@
+        @*     <h2>More About the House</h2> *@
+        @*     <a href="/Info"> *@
+        @*         <img src="/Images/AddInfo.jpg" class="img-fluid content-img" alt="Section 5"> *@
+        @*     </a> *@
+        @*     <p class="description">Learn more about our mission and the people behind the house.</p> *@
+        @* </div> *@
 </body>

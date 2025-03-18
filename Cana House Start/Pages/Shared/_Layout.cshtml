@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,41 +11,63 @@
     <style>
 
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: 100%;
+            max-width: 1800px;
             margin: auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #F5F1E3;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .navbar-brand {
-            font-weight: bold;
-            padding-right: 10px; 
-        }
-
         .navbar-nav {
             display: flex;
-            align-items: center;
+            align-items: center; /* Vertically center navbar items */
         }
 
-            .navbar-nav .nav-item a[href*="/Donate"] {
-                background-color: #800020;
-                color: white !important;
-                padding: 8px 12px;
-                border-radius: 5px;
-                text-align: center;
-            }
+        /* Navbar items on the left */
+        .navbar-nav.left {
+            display: flex;
+            justify-content: flex-start;
+            flex-grow: 1;
+            gap: 70px;
+            list-style: none;
+            padding: 0;
+            font-size: 28px;
+        }
 
-            .navbar-nav .nav-item .dropdown-toggle::after {
-                display: none !important;
-            }
+        /* Navbar items on the right */
+        .navbar-nav.right {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            gap: 70px;
+            list-style: none;
+            padding: 0;
+            font-size: 28px;
+        }
 
-            .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-                display: block;
-            }
+        /* Special styling for Donate button */
+        .navbar-nav .nav-item a[href*="/Donate"] {
+            background-color: #800020;
+            color: white !important;
+            padding: 8px 12px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 28px;
+        }
 
+        /* Remove dropdown arrow */
+        .navbar-nav .nav-item .dropdown-toggle::after {
+            display: none !important;
+        }
+
+        /* Show dropdown menu on hover */
+        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Dropdown menu smooth fade-in */
         .dropdown-menu {
             display: none;
             opacity: 0;
@@ -56,20 +79,25 @@
             display: block;
             opacity: 1;
         }
+
+        /* Center the "About Us" dropdown */
+        .navbar-nav.center {
+            flex-grow: 0;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
     </style>
-
-
-
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <ul class="navbar-nav">
-                    <li>
-                        <a class="navbar-brand" asp-area="" asp-page="/Index">Cana House of Hospitality</a>
+                <ul class="navbar-nav left">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" style="font-weight: bold;" asp-area="" asp-page="/Index">Cana House of Hospitality</a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="EventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Events
@@ -93,16 +121,19 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="infoDropdownToggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             About Us
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdownToggle">
                             <li><a class="dropdown-item" asp-area="" asp-page="/Mission">Mission Goal</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-page="/Founding">Founding</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-page="/Gallery">Gallery</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-page="/ImportantInfo">Meeting Information</a></li>
                         </ul>
                     </li>
+                </ul>
+
+                <ul class="navbar-nav right">
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Contact">Contact Us</a>
                     </li>
@@ -116,7 +147,8 @@
             </div>
         </nav>
     </header>
-    <div">
+
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

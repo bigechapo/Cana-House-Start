@@ -18,11 +18,23 @@
             background-color: #F5F1E3;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: visible;
+        }
+
+        body {
+            background: url('/Images/Cana-Watercolor.JPG') no-repeat center center fixed;
+            background-size: cover;
+            color: #2C2C2C;
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
         }
 
         .navbar-nav {
             display: flex;
             align-items: center; /* Vertically center navbar items */
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
         /* Navbar items on the left */
@@ -34,6 +46,7 @@
             list-style: none;
             padding: 0;
             font-size: 28px;
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
         /* Navbar items on the right */
@@ -45,6 +58,7 @@
             list-style: none;
             padding: 0;
             font-size: 28px;
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
         /* Special styling for Donate button */
@@ -55,6 +69,7 @@
             border-radius: 50px;
             text-align: center;
             font-size: 28px;
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
         /* Remove dropdown arrow */
@@ -65,19 +80,23 @@
         /* Show dropdown menu on hover */
         .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
             display: block;
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
         /* Dropdown menu smooth fade-in */
         .dropdown-menu {
+            position: absolute;
             display: none;
             opacity: 0;
             transition: opacity 0.2s ease-in-out;
             background-color: #F5F1E3;
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
         .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
             display: block;
             opacity: 1;
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
         /* Center the "About Us" dropdown */
@@ -86,6 +105,7 @@
             text-align: center;
             margin-left: auto;
             margin-right: auto;
+            z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
     </style>

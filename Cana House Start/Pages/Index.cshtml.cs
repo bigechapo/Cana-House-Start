@@ -16,18 +16,15 @@ namespace Cana_House_Start.Pages
 
         public void OnGet()
         {
-            /* Uncomment to test DB connectivity
             try
             {
-                // Check if the Users table has any data
-                int userCount = _context.Users.Count();
-                Message = $"Database Connected! User Count: {userCount}";
+                int eventCount = _context.Event.Count();  // Count events instead
+                Message = $"Database Connected! Event Count: {eventCount}";
             }
             catch (Exception ex)
             {
                 Message = $"Database Connection Failed: {ex.Message}";
             }
-            */
         }
     }
 }

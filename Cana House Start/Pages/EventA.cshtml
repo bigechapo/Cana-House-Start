@@ -1,21 +1,23 @@
 ﻿@page
-@model Cana_House_Start.Pages.EventAModel
+@model Cana_House_Start.Pages.EventA
 @{
-    ViewData["Title"] = "Event A";
+    ViewData["Title"] = "Event List";
 }
+
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body {
-            background: url('/Images/Cana-Watercolor.JPG') no-repeat center center fixed;
-            background-size: cover;
-            color: #2C2C2C;
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            padding: 0;
-            position: relative;
-        }
 
+
+        .container1 {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            background-color: #F5F1E3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
 
         h1 {
@@ -31,6 +33,10 @@
             align-items: flex-start;
             gap: 40px;
             padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
 
         .event-left {
@@ -41,72 +47,59 @@
             width: 60%;
         }
 
-        .event-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .event-title, .event-date, .event-description {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Comfortaa', sans-serif;
         }
 
-        .event-details {
-            font-size: 18px;
-            margin-bottom: 20px;
+        .event-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-top: 10px;
         }
 
         .event-button {
             display: inline-block;
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 16px;
             color: #800020;
             border: 2px solid #800020;
             background-color: transparent;
-            text-align: center;
-            text-decoration: none;
             border-radius: 5px;
             transition: 0.3s;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
             .event-button:hover {
                 background-color: #800020;
                 color: white;
             }
-
-        .event-description {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        .note {
-            font-style: italic;
-            font-size: 16px;
-            color: #555;
-            margin-top: 20px;
-        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container1">
         <h1>Upcoming Events</h1>
-        <div class="event-wrapper">
-            <div class="event-left">
-                <div class="event-title">Event A</div>
-                <div class="event-details">
-                    <strong>January 1, 2025</strong><br>
-                    12:00 PM - 10:00 PM<br>
-                    Main Hall
+        <div class="event-list">
+            @foreach (var eventItem in Model.Events)
+            {
+                <div class="event-wrapper">
+                    <div class="event-left">
+                        <h3>@eventItem.Title</h3>
+                        <p>@eventItem.Description</p>
+                        <p>@eventItem.Date.ToString("MMMM dd, yyyy")</p>
+                    </div>
+                    <div class="event-right">
+                        <img class="event-image" src="data:image/png;base64,@Convert.ToBase64String(eventItem.ImageUrl)" alt="@eventItem.Title" />
+                    </div>
                 </div>
-                <a href="#" class="event-button">RSVP</a>
-            </div>
-            <div class="event-right">
-                <p class="event-description">
-                    Ring in the new year with joy and celebration at our New Year’s Party! Join us for an evening filled with live music, delicious food, and festive activities as we count down to midnight together.
-                    Enjoy a warm and welcoming atmosphere with dancing, games, and a special toast at midnight. Whether you're coming with friends, family, or on your own, this is the perfect way to celebrate new beginnings and create lasting memories.
-                </p>
-                <p class="note">
-                    <em>Note: This is a free community event, open to all. Please RSVP to help us plan accordingly.</em>
-                </p>
-            </div>
+            }
         </div>
     </div>
 </body>

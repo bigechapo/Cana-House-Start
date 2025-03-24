@@ -77,31 +77,31 @@
     else
     {
         <div class="container2">
-            <table>
-                <thead>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Submission Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var volunteer in Model.Volunteer)
+                {
                     <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                        <th>Submission Date</th>
+                        <td>@volunteer.Id</td>
+                        <td>@volunteer.FirstName</td>
+                        <td>@volunteer.LastName</td>
+                        <td>@volunteer.PhoneNumber</td>
+                        <td>@volunteer.Email</td>
+                        <td>@volunteer.SubmissionDate.ToString("yyyy-MM-dd HH:mm")</td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var volunteer in Model.Volunteer)
-                    {
-                        <tr>
-                            <td>@volunteer.Id</td>
-                            <td>@volunteer.FirstName</td>
-                            <td>@volunteer.LastName</td>
-                            <td>@volunteer.PhoneNumber</td>
-                            <td>@volunteer.Email</td>
-                            <td>@volunteer.SubmissionDate.ToString("yyyy-MM-dd HH:mm")</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                }
+            </tbody>
+        </table>
         </div>
     }
         <form method="post">

@@ -34,14 +34,15 @@ namespace Cana_House_Start.Pages
                 LastName = VolunteerInput.LastName,
                 PhoneNumber = VolunteerInput.PhoneNumber,
                 Email = VolunteerInput.Email,
-                SubmissionDate = DateTime.UtcNow
+                SubmissionDate = DateTime.UtcNow,
+                Event = VolunteerInput.Event
             };
 
             _context.Volunteers.Add(volunteer); // ✅ Fixed DbSet reference
             await _context.SaveChangesAsync();
 
             Message = "Thank you for signing up!";
-            return RedirectToPage("/VolunteerList");
+            return RedirectToPage("/EventA");
         }
     }
 }

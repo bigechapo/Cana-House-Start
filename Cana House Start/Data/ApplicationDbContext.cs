@@ -43,4 +43,5 @@ public class Volunteers
     public string PhoneNumber { get; set; }
     public string Email { get; set; }
     public System.DateTime SubmissionDate { get; set; }
+    public string Event { get; set; }
 }

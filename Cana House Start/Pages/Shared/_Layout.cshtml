@@ -37,51 +37,51 @@
             z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
-        /* Navbar items on the left */
-        .navbar-nav.left {
-            display: flex;
-            justify-content: flex-start;
-            flex-grow: 1;
-            gap: 70px;
-            list-style: none;
-            padding: 0;
-            font-size: 28px;
-            z-index: 1000; /* Higher z-index ensures it stays on top */
-        }
+            /* Navbar items on the left */
+            .navbar-nav.left {
+                display: flex;
+                justify-content: flex-start;
+                flex-grow: 1;
+                gap: 70px;
+                list-style: none;
+                padding: 0;
+                font-size: 28px;
+                z-index: 1000; /* Higher z-index ensures it stays on top */
+            }
 
-        /* Navbar items on the right */
-        .navbar-nav.right {
-            display: flex;
-            justify-content: flex-end;
-            flex-grow: 1;
-            gap: 70px;
-            list-style: none;
-            padding: 0;
-            font-size: 28px;
-            z-index: 1000; /* Higher z-index ensures it stays on top */
-        }
+            /* Navbar items on the right */
+            .navbar-nav.right {
+                display: flex;
+                justify-content: flex-end;
+                flex-grow: 1;
+                gap: 70px;
+                list-style: none;
+                padding: 0;
+                font-size: 28px;
+                z-index: 1000; /* Higher z-index ensures it stays on top */
+            }
 
-        /* Special styling for Donate button */
-        .navbar-nav .nav-item a[href*="/Donate"] {
-            background-color: #800020;
-            color: white !important;
-            padding: 8px 12px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 28px;
-            z-index: 1000; /* Higher z-index ensures it stays on top */
-        }
+            /* Special styling for Donate button */
+            .navbar-nav .nav-item a[href*="/Donate"] {
+                background-color: #800020;
+                color: white !important;
+                padding: 8px 12px;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 28px;
+                z-index: 1000; /* Higher z-index ensures it stays on top */
+            }
 
-        /* Remove dropdown arrow */
-        .navbar-nav .nav-item .dropdown-toggle::after {
-            display: none !important;
-        }
+            /* Remove dropdown arrow */
+            .navbar-nav .nav-item .dropdown-toggle::after {
+                display: none !important;
+            }
 
-        /* Show dropdown menu on hover */
-        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-            z-index: 1000; /* Higher z-index ensures it stays on top */
-        }
+            /* Show dropdown menu on hover */
+            .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                z-index: 1000; /* Higher z-index ensures it stays on top */
+            }
 
         /* Dropdown menu smooth fade-in */
         .dropdown-menu {
@@ -123,7 +123,7 @@
                             Events
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="EventsDropdown">
-                            <li><a class="dropdown-item" asp-area="" asp-page="/Events">Events Calendar</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Calendar">Events Calendar</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-page="/CommunityLunch">Community Lunch</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-page="/EventA">Event A</a></li>
                             <li><a class="dropdown-item" asp-area="" asp-page="/EventB">Event B</a></li>

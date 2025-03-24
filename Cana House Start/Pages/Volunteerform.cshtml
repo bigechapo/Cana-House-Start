@@ -1,0 +1,108 @@
+﻿@page
+@model Cana_House_Start.Pages.VolunteerFormModel
+@{
+    ViewData["Title"] = "Volunteer Form";
+}
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #6c85a3;
+            color: #2C2C2C;
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container2 {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #800020;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit {
+            background-color: #800020;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+        }
+
+            .submit:hover {
+                background-color: #600018;
+            }
+
+        .message {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <h1>Volunteer Form</h1>
+
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <p class="message">@Model.Message</p>
+    }
+    <div class="container2">
+        <form method="post">
+            <label for="FirstName">First Name:</label>
+            <input type="text" id="FirstName" asp-for="VolunteerInput.FirstName" />
+
+            <label for="LastName">Last Name:</label>
+            <input type="text" id="LastName" asp-for="VolunteerInput.LastName" />
+
+            <label for="PhoneNumber">Phone:</label>
+            <input type="text" id="PhoneNumber" asp-for="VolunteerInput.PhoneNumber" />
+
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" asp-for="VolunteerInput.Email" />
+
+            <input type="submit" value="Submit" class="submit" />
+        </form>
+    </div>
+
+</div>

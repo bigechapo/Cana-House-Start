@@ -69,7 +69,7 @@
 <body>
 <div class="container">
     <h1>Volunteer Submissions</h1>
-
+        <a href="/EventB">Event Creation</a>
     @if (Model.Volunteer.Count == 0)
     {
         <p>No volunteers have signed up yet.</p>
@@ -80,7 +80,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Event</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Phone Number</th>
@@ -92,7 +92,7 @@
                 @foreach (var volunteer in Model.Volunteer)
                 {
                     <tr>
-                        <td>@volunteer.Id</td>
+                        <td>@volunteer.Event</td>
                         <td>@volunteer.FirstName</td>
                         <td>@volunteer.LastName</td>
                         <td>@volunteer.PhoneNumber</td>

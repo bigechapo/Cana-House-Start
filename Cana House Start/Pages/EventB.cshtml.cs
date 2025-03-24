@@ -49,11 +49,10 @@ namespace Cana_House_Start.Pages
 
                 if (eventData.EventImage != null && eventData.EventImage.Length > 0)
                 {
-                    // Convert the uploaded image to byte array
                     using (var memoryStream = new MemoryStream())
                     {
                         await eventData.EventImage.CopyToAsync(memoryStream);
-                        imageBytes = memoryStream.ToArray(); // Store the image as byte array
+                        imageBytes = memoryStream.ToArray(); 
                     }
                 }
 
@@ -64,7 +63,7 @@ namespace Cana_House_Start.Pages
                     Title = eventData.EventTitle,
                     Description = eventData.EventDescription,
                     Date = parsedDate,
-                    ImageUrl = imageBytes // Store the image as byte array in the database
+                    ImageUrl = imageBytes 
                 };
 
                 _context.Event.Add(newEvent);

@@ -11,6 +11,8 @@ namespace CanaHouse.Data
 
         public DbSet<Event> Event { get; set; }
         public DbSet<Users> Users { get; set; }
+        public DbSet<Volunteers> Volunteers { get; set; }
+
     }
 
     public class Users
@@ -26,9 +28,19 @@ namespace CanaHouse.Data
         public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        // Store the image as a byte array
+
         public byte[] ImageUrl { get; set; }
         public DateOnly Date { get; set; }
     }
 }
 
+
+public class Volunteers 
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string PhoneNumber { get; set; }
+    public string Email { get; set; }
+    public System.DateTime SubmissionDate { get; set; }
+}

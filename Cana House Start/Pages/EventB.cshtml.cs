@@ -61,7 +61,7 @@ namespace Cana_House_Start.Pages
 
                 var newEvent = new Event
                 {
-                    ID = 8,
+                  
                     Title = eventData.EventTitle,
                     Description = eventData.EventDescription,
                     Date = parsedDate,

@@ -12,9 +12,9 @@
 
         .container {
             width: 100%;
-            max-width: 1800px;
-            margin: auto;
-            padding: 10px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
             background-color: #F5F1E3;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -42,10 +42,10 @@
                 display: flex;
                 justify-content: flex-start;
                 flex-grow: 1;
-                gap: 70px;
+                gap: 100px;
                 list-style: none;
                 padding: 0;
-                font-size: 28px;
+                font-size: 25px;
                 z-index: 1000; /* Higher z-index ensures it stays on top */
             }
 
@@ -54,10 +54,11 @@
                 display: flex;
                 justify-content: flex-end;
                 flex-grow: 1;
-                gap: 70px;
+                gap: 100px;
                 list-style: none;
+                margin: 0;
                 padding: 0;
-                font-size: 28px;
+                font-size: 25px;
                 z-index: 1000; /* Higher z-index ensures it stays on top */
             }
 
@@ -102,9 +103,8 @@
         /* Center the "About Us" dropdown */
         .navbar-nav.center {
             flex-grow: 0;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0;
+            padding: 0;
             z-index: 1000; /* Higher z-index ensures it stays on top */
         }
 
@@ -117,6 +117,17 @@
                 <ul class="navbar-nav left">
                     <li class="nav-item">
                         <a class="nav-link text-dark" style="font-weight: bold;" asp-area="" asp-page="/Index">Cana House of Hospitality</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="infoDropdownToggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdownToggle">
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Mission">Mission Goal</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Founding">Founding</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/Gallery">Gallery</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-page="/ImportantInfo">Meeting Information</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="EventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -132,7 +143,7 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="VolunteerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Volunteer Opportunities
+                            Join Us
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="VolunteerDropdown">
                             <li><a class="dropdown-item" asp-area="" asp-page="/WorkDays">Work Days</a></li>
@@ -140,17 +151,7 @@
                             <li><a class="dropdown-item" asp-area="" asp-page="/WishList">Wish List</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" href="#" id="infoDropdownToggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="infoDropdownToggle">
-                            <li><a class="dropdown-item" asp-area="" asp-page="/Mission">Mission Goal</a></li>
-                            <li><a class="dropdown-item" asp-area="" asp-page="/Founding">Founding</a></li>
-                            <li><a class="dropdown-item" asp-area="" asp-page="/Gallery">Gallery</a></li>
-                            <li><a class="dropdown-item" asp-area="" asp-page="/ImportantInfo">Meeting Information</a></li>
-                        </ul>
-                    </li>
+                    
                 </ul>
 
                 <ul class="navbar-nav right">

@@ -35,7 +35,7 @@ namespace CanaHouse.Data
 }
 
 
-public class Volunteers 
+public class Volunteers
 {
     public int Id { get; set; }
     public string FirstName { get; set; }

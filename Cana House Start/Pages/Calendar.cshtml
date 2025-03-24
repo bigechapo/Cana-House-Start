@@ -20,26 +20,42 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
             flex-direction: column;
         }
 
         .container {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container2 {
             width: 90%;
             max-width: 1200px;
             background-color: #F5F1E3;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
+            margin: auto;
             text-align: center;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
             color: #800020;
-            font-size: 36px;
+            font-size: 45px;
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Playfair Display', serif;
+            color: #800020;
+            font-size: 30px;
         }
 
         .calendar-container {
@@ -103,54 +119,56 @@
 <body>
     <div class="container">
         <h1>@getDate.ToString("MMMM yyyy")</h1> 
-        <div class="calendar-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Sunday</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        @for (int i = 0; i < firstDayOfWeek; i++)
-                        {
-                            <td class="empty"></td> 
-                        }
-
-                        @for (int day = 1; day <= numberOfDays; day++)
-                        {
-                            var date = new DateTime(getDate.Year, getDate.Month, day);
-                            var eventOnDate = Model.Event.FirstOrDefault(e => e.Date == DateOnly.FromDateTime(date));
-                            bool hasEvent = eventOnDate != null;
-
-                            if ((firstDayOfWeek + day - 1) % 7 == 0 && day > 1)
+        <div class="container2">
+            <div class="calendar-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sunday</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @for (int i = 0; i < firstDayOfWeek; i++)
                             {
-                                @:</tr><tr> 
+                                <td class="empty"></td> 
                             }
 
-                            if (date.Month == getDate.Month && date.Day == getDate.Day)
+                            @for (int day = 1; day <= numberOfDays; day++)
                             {
-                                <td class="current">@date.Day</td> 
+                                var date = new DateTime(getDate.Year, getDate.Month, day);
+                                var eventOnDate = Model.Event.FirstOrDefault(e => e.Date == DateOnly.FromDateTime(date));
+                                bool hasEvent = eventOnDate != null;
+
+                                if ((firstDayOfWeek + day - 1) % 7 == 0 && day > 1)
+                                {
+                                    @:</tr><tr> 
+                                }
+
+                                if (date.Month == getDate.Month && date.Day == getDate.Day)
+                                {
+                                    <td class="current">@date.Day</td> 
+                                }
+                                else if (hasEvent)
+                                {
+                                    <td class="event" data-event="@eventOnDate.Title">@date.Day</td> 
+                                }
+                                else
+                                {
+                                    <td>@date.Day</td>
+                                }
                             }
-                            else if (hasEvent)
-                            {
-                                <td class="event" data-event="@eventOnDate.Title">@date.Day</td> 
-                            }
-                            else
-                            {
-                                <td>@date.Day</td>
-                            }
-                        }
-                    </tr>
-                </tbody>
-                <p>Upcoming Events are labeled in Green</p>
-            </table>
+                        </tr>
+                    </tbody>
+                    <p>Upcoming Events are labeled in Green</p>
+                </table>
+            </div>
         </div>
     </div>
 </body>

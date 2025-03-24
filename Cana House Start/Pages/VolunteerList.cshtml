@@ -16,6 +16,16 @@
         }
 
         .container {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            padding: 20px;
+            background-color: #F5F1E3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container2 {
             width: 90%;
             max-width: 1200px;
             margin: auto;
@@ -66,6 +76,7 @@
     }
     else
     {
+        <div class="container2">
         <table>
             <thead>
                 <tr>
@@ -91,6 +102,7 @@
                 }
             </tbody>
         </table>
+        </div>
     }
         <form method="post">
             <button type="submit" asp-page-handler="DeleteAll" class="event-button" onclick="return confirm('Are you sure you want to delete all events? This action cannot be undone.');">

@@ -18,13 +18,16 @@
         .event-wrapper {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: start; /* Ensures both sections align at the top */
             gap: 40px;
             padding: 20px;
         }
 
         .event-left {
-            width: 40%;
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers image and title */
         }
 
         .event-right {
@@ -32,70 +35,51 @@
         }
 
         .event-title {
-            font-size: 28px;
+            font-size: 35px;
             font-weight: bold;
             margin-bottom: 10px;
-        }
-
-        .event-details {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .event-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: #800020;
-            border: 2px solid #800020;
-            background-color: transparent;
             text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
         }
-
-            .event-button:hover {
-                background-color: #800020;
-                color: white;
-            }
 
         .event-description {
-            font-size: 18px;
+            font-size: 27px;
             line-height: 1.6;
             text-align: justify;
         }
 
         .note {
             font-style: italic;
-            font-size: 16px;
+            font-size: 20px;
             color: #555;
             margin-top: 20px;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Upcoming Events</h1>
         <div class="event-wrapper">
             <div class="event-left">
                 <div class="event-title">Community Lunch</div>
-                <div class="event-details">
-                    <strong>March 15, 2025</strong><br>
-                    12:00 PM - 2:00 PM<br>
-                    Cana House Dining Hall
-                </div>
-                <a href="#" class="event-button">RSVP</a>
+                <img src="~/images/CommunityLunch.jpg">
             </div>
             <div class="event-right">
+                <h1>Upcoming Events</h1>
                 <p class="event-description">
                     Join us for a special Community Lunch, where neighbors and friends gather to share a meal, connect, and foster a sense of belonging.
                     Enjoy delicious food, great company, and meaningful conversations in a warm and welcoming environment.
                     Whether you’re new to the community or a long-time member, this lunch is a wonderful opportunity to make new friends and deepen connections.
+                    <strong>Every third Sunday of the Month</strong>, the house will host these events.
                 </p>
                 <p class="note">
-                    <em>Note: This is a free community event, open to all. Please RSVP to help us plan accordingly.</em>
+                    <em>Note: This is a free community event, open to all.</em>
                 </p>
             </div>
         </div>

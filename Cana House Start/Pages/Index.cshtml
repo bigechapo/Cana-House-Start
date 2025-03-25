@@ -5,8 +5,6 @@
 }
 
 <head>
-    @*Uncomment below to check database connectivity*@
-    @*<h2>@Model.Message</h2>*@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
@@ -14,142 +12,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
-
-        /* Dark overlay to improve contrast */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+        body, html {
+            margin: 0;
+            padding: 0;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 0;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Hero header styling */
-        .hero-header {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 900;
-            color: white;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            z-index: 1;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
-        }
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+            }
 
-        /* Ensure content stays on top of the overlay */
         .content {
             position: relative;
             z-index: 1;
+            flex-grow: 1;
+        }
+
+        .footer-container {
+            background-color: #F5F1E3;
+
+            padding: 30px;
+            font-family: 'Playfair Display', serif;
+            color: #800020;
+            text-align: center;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+            position: absolute; /* Stays in place even when scrolling */
+            bottom: 12.5%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, 50%); /* Offset by half its size */
+            border-radius: 60px;
+            max-width: 100%;
         }
 
 
-        /* .container {  */
-        /*     width: 90%;  */
-        /*     max-width: 1200px; */
-        /*     margin: auto; */
-        /*     padding: 20px; */
-        /*     background-color: #F5F1E3; */
-        /*     border-radius: 10px; */
-        /*     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-        /*     text-align: center; */
-        /*  } */
+            /* Keep the text styling */
+            .footer-container p:first-child {
+                font-size: 2.5rem;
+                color: #2C2C2C;
+            }
 
-        /* .content {
-                /*     padding: 20px; */
-        /*     background: #FAFAFA; */
-        /*     min-height: 300px; */
-        /*     display: flex; */
-        /*     flex-direction: column; */
-        /*     justify-content: center; */
-        /*     align-items: center; */
-        /*     width: 90%; */
-        /*     max-width: 800px; */
-        /*     margin: 20px auto; */
-        /*     border-radius: 8px; */
-        /*     border: 2px solid #283F3B; */
-        /*     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-        /* } */
+            .footer-container p:nth-child(n + 2) {
+                font-size: 1.5rem;
+            }
 
-        /* h1, h2 { */
-        /*     font-family: 'Playfair Display', serif; */
-        /*     color: #800020; */
-        /*     text-align: center; */
-        /* } */
-
-        /* p { */
-        /*     font-size: 18px; */
-        /*     color: #2C2C2C; */
-        /* } */
-
-        /* .content-img { */
-        /*     width: 80%; */
-        /*     max-width: 600px; */
-        /*     border-radius: 10px; */
-        /*     transition: transform 0.3s ease-in-out; */
-        /* } */
-
-        /*     .content-img:hover { */
-        /*         transform: scale(1.1); */
-        /*     } */
-
-        /* .description { */
-        /*     margin-top: 15px; */
-        /*     font-size: 18px; */
-        /*     font-weight: bold; */
-        /*     color: #333; */
-        /* } */
-
-        /* a { */
-        /*     text-decoration: none; */
-        /*     color: #800020; */
-        /*     font-weight: bold; */
-        /* } */
-
-        /*     a:hover { */
-        /*         text-decoration: underline; */
-        /*     } */
     </style>
 </head>
 
 <body>
-    <h1 class="hero-header">Welcome to the Cana House of Hospitality</h1>
 
-    @* <div class="content"> *@
-    @*     <a href="/Index"> *@
-    @*         <img src="/Images/Cana-Watercolor.JPG" class="img-fluid content-img" alt="Section 1"> *@
-    @*     </a> *@
-    @*     <p class="description">We are a Catholic hospitality house dedicated to providing a welcoming environment for all.</p> *@
-    @* </div> *@
+    <div class="content">
+        <!-- Your content goes here -->
+    </div>
 
-    @* <div class="content"> *@
-    @*     <h2>Upcoming Events</h2> *@
-    @*     <a href="/Events"> *@
-    @*         <img src="/Images/Events.jpg" class="img-fluid content-img" alt="Section 3"> *@
-    @*     </a> *@
-    @*     <p class="description">Check out our upcoming events.</p> *@
-    @* </div> *@
+    <div class="footer-container">
+        <p>Welcome to the Cana House of Hospitality!</p>
+        <p>
+            We provide a safe and welcoming space where
+            individuals of all backgrounds can come together in fellowship.
 
-    @* <div class="content"> *@
-    @*     <h2>Donations</h2> *@
-    @*     <a href="/Donate"> *@
-    @*         <img src="/Images/Donation.jpg" class="img-fluid content-img" alt="Section 4"> *@
-    @*     </a> *@
-    @*     <p class="description">We appreciate all of your generosity.</p> *@
-    @* </div> *@
-
-    @* <div class="content"> *@
-    @*     <h2>More About the House</h2> *@
-    @*     <a href="/Info"> *@
-    @*         <img src="/Images/AddInfo.jpg" class="img-fluid content-img" alt="Section 5"> *@
-    @*     </a> *@
-    @*     <p class="description">Learn more about our mission and the people behind the house.</p> *@
-    @* </div> *@
-
+        </p>
+        <p></p>
+    </div>
 </body>
-

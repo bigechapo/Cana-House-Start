@@ -1,0 +1,46 @@
+name: Build and Deploy .NET Web App
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build-web:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        configuration: [Release]
+
+    env:
+      Web_Project_Path: "Cana House Start.csproj"  # Replace with your web project path
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x  # Change if using a different .NET version
+
+    - name: Restore Dependencies
+      run: dotnet restore $env:Web_Project_Path
+
+    - name: Build Web App
+      run: dotnet build $env:Web_Project_Path --configuration $env:Configuration --no-restore
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    - name: Publish Web App
+      run: dotnet publish $env:Web_Project_Path --configuration $env:Configuration --output out
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    - name: Upload Web Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: WebApp
+        path: out

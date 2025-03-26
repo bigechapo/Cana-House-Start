@@ -15,7 +15,7 @@ jobs:
         configuration: [Release]
 
     env:
-      Web_Project_Path: "Cana House Start/Cana House Start.csproj"  # Corrected path to match the actual .csproj file
+      Web_Project_Path: "Cana House Start/wwwroot/Cana House Start.csproj"  # Corrected path to match the actual .csproj file
 
     steps:
     - name: Checkout Repository

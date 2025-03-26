@@ -1,7 +1,7 @@
 using CanaHouse.Data;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Cana House Start.Pages
+namespace Cana_House_Start.Pages
 {
     public class IndexModel : PageModel
     {

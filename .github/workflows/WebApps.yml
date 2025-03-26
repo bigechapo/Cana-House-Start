@@ -2,45 +2,33 @@ name: Build and Deploy .NET Web App
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - main
 
 jobs:
-
-  build-web:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        configuration: [Release]
-
     env:
-      Web_Project_Path: "Cana House Start/wwwroot/Cana House Start.csproj"  # Corrected path to match the actual .csproj file
+      Web_Project_Path: 'Cana House Start/Cana House Start.csproj'  # Corrected path
+      DOTNET_ROOT: /usr/share/dotnet
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x  # Change if using a different .NET version
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
 
-    - name: Restore Dependencies
-      run: dotnet restore $env:Web_Project_Path
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.Web_Project_Path }}
 
-    - name: Build Web App
-      run: dotnet build $env:Web_Project_Path --configuration $env:Configuration --no-restore
-      env:
-        Configuration: ${{ matrix.configuration }}
+      - name: Build
+        run: dotnet build ${{ env.Web_Project_Path }} --configuration Release --no-restore
 
-    - name: Publish Web App
-      run: dotnet publish $env:Web_Project_Path --configuration $env:Configuration --output out
-      env:
-        Configuration: ${{ matrix.configuration }}
-
-    - name: Upload Web Build Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: WebApp
-        path: out
+      - name: Deploy
+        run: dotnet publish ${{ env.Web_Project_Path }} --configuration Release --output ./publish

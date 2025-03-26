@@ -15,7 +15,7 @@ jobs:
         configuration: [Release]
 
     env:
-      Web_Project_Path: "Cana House Start"  # Replace with your web project path
+      Web_Project_Path: "Cana-House-Start/Cana House Start/"  # Replace with your web project path
 
     steps:
     - name: Checkout Repository
@@ -27,15 +27,15 @@ jobs:
         dotnet-version: 8.0.x  # Change if using a different .NET version
 
     - name: Restore Dependencies
-      run: dotnet restore $env:Web_Project_Path
+      run: dotnet restore $env:"Cana-House-Start/Cana House Start/"
 
     - name: Build Web App
-      run: dotnet build $env:Web_Project_Path --configuration $env:Configuration --no-restore
+      run: dotnet build $env:"Cana-House-Start/Cana House Start/" --configuration $env:Configuration --no-restore
       env:
         Configuration: ${{ matrix.configuration }}
 
     - name: Publish Web App
-      run: dotnet publish $env:Web_Project_Path --configuration $env:Configuration --output out
+      run: dotnet publish $env:"Cana-House-Start/Cana House Start/" --configuration $env:Configuration --output out
       env:
         Configuration: ${{ matrix.configuration }}
 

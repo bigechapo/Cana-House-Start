@@ -9,13 +9,15 @@ COPY Cana-House-Start/Cana\ House\ Start/Cana\ House\ Start.csproj ./Cana\ House
 RUN dotnet restore Cana\ House\ Start.csproj
 
 # Copy the rest of the app and publish it
-COPY Cana-House-Start/Cana\ House\ Start ./
+COPY Cana-House-Start ./ 
 RUN dotnet publish Cana\ House\ Start.csproj -c Release -o /app/publish
 
 # Use the official .NET runtime image for running the app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
-COPY --from=build /app/publish .
+
+# Copy the published app from the build container
+COPY --from=build /app/publish . 
 
 # Expose the port the app will run on
 EXPOSE 80

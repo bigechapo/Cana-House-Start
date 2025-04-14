@@ -6,11 +6,11 @@ WORKDIR /src
 
 # Copy the .csproj file and restore dependencies (make sure to use the correct path)
 COPY "Cana House Start/Cana House Start.csproj" ./Cana\ House\ Start.csproj
-RUN dotnet restore Cana\ House\ Start.csproj
+RUN dotnet restore "Cana House Start.csproj"
 
 # Copy the rest of the app and publish it
 COPY "Cana House Start" ./
-RUN dotnet publish Cana\ House\ Start.csproj -c Release -o /app/publish
+RUN dotnet publish "Cana House Start.csproj" -c Release -o /app/publish
 
 # Use the official .NET runtime image for running the app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final

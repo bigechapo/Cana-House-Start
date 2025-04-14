@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy the .csproj file and restore dependencies (make sure to use the correct path)
-COPY "Cana House Start/Cana House Start.csproj" "./Cana\ House\ Start.csproj"
+COPY "Cana House Start/Cana House Start.csproj" "./Cana House Start.csproj"
 RUN dotnet restore Cana\ House\ Start.csproj
 
 # Copy the rest of the app and publish it

@@ -9,7 +9,7 @@ COPY Cana-House-Start/Cana_House_Start/Cana_House_Start.csproj ./Cana_House_Star
 RUN dotnet restore "Cana_House_Start.csproj"
 
 # Copy the rest of the app and publish it
-COPY Cana-House-Start/Cana_House_Start./
+COPY Cana-House-Start/Cana_House_Start./Cana_House_Start.csproj
 RUN dotnet publish "Cana_House_Start.csproj" -c Release -o /app/publish
 
 # Use the official .NET runtime image for running the app
